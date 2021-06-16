@@ -12,6 +12,8 @@ public class SpringJdbcTestApplication implements CommandLineRunner {
 
     @Autowired
     private CustomerService customerService;
+    @Autowired
+    private CustomerServiceUsingJdbcTemplate customerServiceUsingJdbcTemplate;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringJdbcTestApplication.class, args);
@@ -23,5 +25,6 @@ public class SpringJdbcTestApplication implements CommandLineRunner {
        customerService.displayCardsFromSpb(); 
        customerService.displayCreditForId(); 
        customerService.displayAllCustomersWithBigCredit(); 
+       customerServiceUsingJdbcTemplate.addAndDeleteCustomer();
     }
 }
