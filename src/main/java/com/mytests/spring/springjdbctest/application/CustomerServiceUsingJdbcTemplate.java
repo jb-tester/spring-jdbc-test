@@ -40,6 +40,7 @@ public class CustomerServiceUsingJdbcTemplate {
         for (Map<String, Object> map : operations.queryForList("select * from customer")) {
             System.out.println(map.toString());
         }
+        // no SQL injected here
         System.out.println(operations.queryForStream("select * from customer", null));
     }
 }
